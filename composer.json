@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "stephenjude/lenco-laravel-sdk",
+    "description": " Laravel SDK for Lenco payment API integration.",
     "keywords": [
-        ":vendor_name",
+        "stephenjude",
         "laravel",
-        ":package_slug"
+        "lenco-laravel-sdk"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/stephenjude/lenco-laravel-sdk",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "stephenjude",
+            "email": "stephenjudesuccess@gmail.com",
             "role": "Developer"
         }
     ],
@@ -21,33 +21,32 @@
         "illuminate/contracts": "^10.0"
     },
     "require-dev": {
+        "larastan/larastan": "^2.0.1",
         "laravel/pint": "^1.0",
         "nunomaduro/collision": "^7.8",
-        "larastan/larastan": "^2.0.1",
         "orchestra/testbench": "^8.8",
         "pestphp/pest": "^2.20",
         "pestphp/pest-plugin-arch": "^2.5",
         "pestphp/pest-plugin-laravel": "^2.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "spatie/laravel-ray": "^1.26"
+        "phpstan/phpstan-phpunit": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "LencoSDK\\Lenco\\": "src/",
+            "LencoSDK\\Lenco\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "LencoSDK\\Lenco\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-lenco-laravel-sdk --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
@@ -73,10 +72,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "LencoSDK\\Lenco\\LencoServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "Lenco": "LencoSDK\\Lenco\\Facades\\Lenco"
             }
         }
     },
