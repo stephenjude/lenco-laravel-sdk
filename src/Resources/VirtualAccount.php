@@ -25,5 +25,4 @@ class VirtualAccount extends Resource
     public string $createdAt;
 
     public string $expiresAt;
-
 }

@@ -4,7 +4,6 @@ namespace LencoSDK\Lenco;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use LencoSDK\Lenco\Commands\LencoCommand;
 
 class LencoServiceProvider extends PackageServiceProvider
 {

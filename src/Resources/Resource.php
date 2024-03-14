@@ -3,7 +3,6 @@
 namespace LencoSDK\Lenco\Resources;
 
 use LencoSDK\Lenco\Lenco;
-use OhDear\PhpSdk\OhDear;
 
 abstract class Resource
 {
@@ -15,7 +14,7 @@ abstract class Resource
     protected function fill(): void
     {
         collect($this->attributes)->each(
-            fn($value, $key) => $this->{$this->camelCase($key)} = $value
+            fn ($value, $key) => $this->{$this->camelCase($key)} = $value
         );
     }
 

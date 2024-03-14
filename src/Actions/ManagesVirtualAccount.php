@@ -3,7 +3,6 @@
 namespace LencoSDK\Lenco\Actions;
 
 use LencoSDK\Lenco\Resources\VirtualAccount;
-use OhDear\PhpSdk\Resources\Site;
 
 trait ManagesVirtualAccount
 {
@@ -29,7 +28,7 @@ trait ManagesVirtualAccount
             'transactionReference' => $transactionReference,
             'amount' => $amount,
             'minAmount' => $minAmount,
-            'bvn' => $bvn
+            'bvn' => $bvn,
         ]);
 
         /**
@@ -40,7 +39,7 @@ trait ManagesVirtualAccount
             'createNewAccount' => $createNewAccount,
         ]);
 
-        return new VirtualAccount (
+        return new VirtualAccount(
             attributes: $this->post('virtual-accounts', $payload),
             lenco: $this,
         );
@@ -68,7 +67,7 @@ trait ManagesVirtualAccount
      */
     public function virtualAccount(string $accountReference): VirtualAccount
     {
-        return new VirtualAccount (
+        return new VirtualAccount(
             $this->get("virtual-accounts/$accountReference")['virtualAccounts'],
             $this,
         );
