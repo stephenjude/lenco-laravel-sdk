@@ -3,14 +3,18 @@
 namespace LencoSDK\Lenco;
 
 use Illuminate\Http\Client\PendingRequest;
+use LencoSDK\Lenco\Actions\ManagesAccount;
 use LencoSDK\Lenco\Actions\ManagesBank;
+use LencoSDK\Lenco\Actions\ManagesTransactions;
 use LencoSDK\Lenco\Actions\ManagesVirtualAccount;
 
 class Lenco
 {
     use MakesHttpRequest;
+    use ManagesAccount;
     use ManagesBank;
     use ManagesVirtualAccount;
+    use ManagesTransactions;
 
     public PendingRequest $client;
 

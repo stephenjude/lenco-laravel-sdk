@@ -8,17 +8,13 @@ class VirtualAccount extends Resource
 
     public string $accountReference;
 
-    public string $accountName;
-
-    public string $accountNumber;
-
-    public string $bankCode;
-
-    public string $bankName;
+    public VirtualAccount $bankAccount;
 
     public string $currency;
 
     public string $type;
+
+    public array $meta;
 
     public string $status;
 
@@ -26,4 +22,11 @@ class VirtualAccount extends Resource
 
     public string $expiresAt;
 
+    public function transactions(?string $page = null): array
+    {
+        return $this->lenco->virtualAccountTransactions(
+            accountReference: $this->accountReference,
+            page: $page
+        );
+    }
 }

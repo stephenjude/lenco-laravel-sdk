@@ -8,7 +8,5 @@ class ResolvedAccount extends Resource
 
     public string $accountNumber;
 
-    public string $bankName;
-
-    public string $bankCode;
+    public Bank $bank;
 }

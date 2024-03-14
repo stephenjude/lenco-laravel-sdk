@@ -3,8 +3,8 @@
 namespace LencoSDK\Lenco\Resources;
 
 use LencoSDK\Lenco\Lenco;
-use OhDear\PhpSdk\OhDear;
 
+#[\AllowDynamicProperties]
 abstract class Resource
 {
     public function __construct(protected array $attributes = [], protected ?Lenco $lenco = null)
