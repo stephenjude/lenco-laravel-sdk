@@ -22,7 +22,6 @@ class Account extends Resource
 
     public string $createdAt;
 
-
     public function balance(): Balance
     {
         return $this->lenco->accountBalance($this->id);

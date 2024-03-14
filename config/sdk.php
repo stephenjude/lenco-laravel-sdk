@@ -11,5 +11,5 @@ return [
      * Lenco API Token
      * https://lenco-api.readme.io/reference/get-started
      */
-    'api_token' => env('LENCO_API_TOKEN')
+    'api_token' => env('LENCO_API_TOKEN'),
 ];

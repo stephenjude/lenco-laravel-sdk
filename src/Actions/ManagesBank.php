@@ -4,7 +4,6 @@ namespace LencoSDK\Lenco\Actions;
 
 use LencoSDK\Lenco\Resources\Bank;
 use LencoSDK\Lenco\Resources\ResolvedAccount;
-use OhDear\PhpSdk\Resources\Site;
 
 trait ManagesBank
 {

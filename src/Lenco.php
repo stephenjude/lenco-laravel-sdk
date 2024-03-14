@@ -29,5 +29,4 @@ class Lenco
     {
         return (new \DateTimeImmutable($date))->format($format);
     }
-
 }
