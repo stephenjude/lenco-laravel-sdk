@@ -12,6 +12,7 @@ use LencoSDK\Lenco\Resources\VirtualAccount;
 
 /**
  * @see \LencoSDK\Lenco\Lenco
+ *
  * @method static array<Account> accounts()
  * @method static Account account(string $accountID)
  * @method static Balance accountBalance(string $accountID)
