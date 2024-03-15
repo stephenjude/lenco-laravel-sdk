@@ -8,7 +8,7 @@ class VirtualAccount extends Resource
 
     public string $accountReference;
 
-    public VirtualAccount $bankAccount;
+    public ResolvedAccount $bankAccount;
 
     public string $currency;
 

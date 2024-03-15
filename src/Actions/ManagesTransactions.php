@@ -3,7 +3,6 @@
 namespace LencoSDK\Lenco\Actions;
 
 use LencoSDK\Lenco\Resources\Transaction;
-use OhDear\PhpSdk\Resources\Site;
 
 trait ManagesTransactions
 {
@@ -49,7 +48,7 @@ trait ManagesTransactions
      */
     public function transactionById(string $transactionId): Transaction
     {
-        return new Transaction (
+        return new Transaction(
             attributes: $this->get("transaction/$transactionId"),
             lenco: $this,
         );
@@ -62,7 +61,7 @@ trait ManagesTransactions
      */
     public function transactionByReference(string $transactionReference): Transaction
     {
-        return new Transaction (
+        return new Transaction(
             attributes: $this->get("transaction/$transactionReference"),
             lenco: $this,
         );

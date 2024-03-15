@@ -4,7 +4,6 @@ namespace LencoSDK\Lenco\Actions;
 
 use LencoSDK\Lenco\Resources\Account;
 use LencoSDK\Lenco\Resources\Balance;
-use OhDear\PhpSdk\Resources\Site;
 
 trait ManagesAccount
 {
@@ -31,7 +30,7 @@ trait ManagesAccount
     public function account(string $accountID): Account
     {
         return new Account(
-            attributes: $this->get("account/$accountID",),
+            attributes: $this->get("account/$accountID"),
             lenco: $this,
         );
     }
@@ -44,7 +43,7 @@ trait ManagesAccount
     public function accountBalance(string $accountID): Balance
     {
         return new Balance(
-            attributes: $this->get("account/$accountID/balance",),
+            attributes: $this->get("account/$accountID/balance"),
             lenco: $this,
         );
     }

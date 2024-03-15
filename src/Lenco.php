@@ -13,8 +13,8 @@ class Lenco
     use MakesHttpRequest;
     use ManagesAccount;
     use ManagesBank;
-    use ManagesVirtualAccount;
     use ManagesTransactions;
+    use ManagesVirtualAccount;
 
     public PendingRequest $client;
 
@@ -23,10 +23,5 @@ class Lenco
         return array_map(function ($attributes) use ($resourceClass) {
             return new $resourceClass($attributes, $this);
         }, $collection);
-    }
-
-    public function convertDateFormat(string $date, $format = 'YmdHis'): string
-    {
-        return (new \DateTimeImmutable($date))->format($format);
     }
 }

@@ -16,6 +16,6 @@ class LencoServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('lenco-laravel-sdk')
-            ->hasConfigFile();
+            ->hasConfigFile('lenco');
     }
 }
