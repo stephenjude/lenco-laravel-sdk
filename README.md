@@ -39,6 +39,55 @@ use \LencoSDK\Lenco\Facades\Lenco;
 $banks  = Lenco::banks();
 ```
 
+### Supported APIs
+
+```php
+use LencoSDK\Lenco\Facades\Lenco;
+
+ Lenco::accounts();
+ 
+ Lenco::account(string $accountID);
+ 
+ Lenco::accountBalance($accountID);
+ 
+ Lenco::banks();
+ 
+ Lenco::resolve($accountNumber, $bankCode);
+ 
+ Lenco::transactions(
+     $page = null, 
+     $status = null, 
+     $type = null, $start = null, 
+     $end = null, $search = null, array 
+     $accountIds = null
+ );
+ 
+ Lenco::transactionById($transactionId);
+ 
+ Lenco::transactionByReference($transactionReference);
+ 
+ Lenco::createVirtualAccount(
+     $accountName, 
+     $transactionReference = null,  
+     $amount = null,  
+     $minAmount = null,  
+     $isStatic = false,  
+     $createNewAccount = false, 
+     $bvn = null
+ );
+ 
+ Lenco::virtualAccounts($page = null);
+ 
+ Lenco::virtualAccountByReference($accountReference);
+ 
+ Lenco::virtualAccountByBVN($bvn);
+ 
+ Lenco::virtualAccountTransactions($accountReference, $page = null);
+ 
+ Lenco::virtualAccountTransaction($transactionId);
+
+```
+
 ## Testing
 
 ```bash
