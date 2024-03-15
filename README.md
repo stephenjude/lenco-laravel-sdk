@@ -39,52 +39,54 @@ use \LencoSDK\Lenco\Facades\Lenco;
 $banks  = Lenco::banks();
 ```
 
-### Supported APIs
+### Supported APIs & Usage
 
 ```php
-use LencoSDK\Lenco\Facades\Lenco;
+    use LencoSDK\Lenco\Facades\Lenco;
+    
+    Lenco::accounts();
 
- Lenco::accounts();
- 
- Lenco::account(string $accountID);
- 
- Lenco::accountBalance($accountID);
- 
- Lenco::banks();
- 
- Lenco::resolve($accountNumber, $bankCode);
- 
- Lenco::transactions(
-     $page = null, 
-     $status = null, 
-     $type = null, $start = null, 
-     $end = null, $search = null, array 
-     $accountIds = null
- );
- 
- Lenco::transactionById($transactionId);
- 
- Lenco::transactionByReference($transactionReference);
- 
- Lenco::createVirtualAccount(
-     $accountName, 
-     $transactionReference = null,  
-     $amount = null,  
-     $minAmount = null,  
-     $isStatic = false,  
-     $createNewAccount = false, 
-     $bvn = null
- );
- 
- Lenco::virtualAccounts($page = null);
- 
- Lenco::virtualAccountByReference($accountReference);
- 
- Lenco::virtualAccountByBVN($bvn);
- 
- Lenco::virtualAccountTransactions($accountReference, $page = null);
- 
- Lenco::virtualAccountTransaction($transactionId);
+    Lenco::account(accountID: $accountID);
+
+    Lenco::accountBalance(accountID: $accountID);
+
+    Lenco::banks();
+
+    Lenco::resolve(accountNumber: $accountNumber, bankCode: $bankCode);
+
+    Lenco::transactions(
+        page: $page = null,
+        status: $status = null,
+        type: $type = null,
+        start: $start = null,
+        end: $end = null,
+        search: $search = null,
+        accountIds: $accountIds = null
+    );
+
+    Lenco::transactionById(transactionId: $transactionId);
+
+    Lenco::transactionByReference(transactionReference: $transactionReference);
+
+    Lenco::createVirtualAccount(
+        accountName: $accountName,
+        transactionReference: $transactionReference = null,
+        amount: $amount = null,
+        minAmount: $minAmount = null,
+        isStatic: $isStatic = false,
+        createNewAccount: $createNewAccount = false,
+        bvn: $bvn = null
+    );
+
+    Lenco::virtualAccounts(page: $page = null);
+
+    Lenco::virtualAccountByReference(accountReference: $accountReference);
+
+    Lenco::virtualAccountByBVN(bvn: $bvn);
+
+    Lenco::virtualAccountTransactions(accountReference: $accountReference, page: $page = null);
+
+    Lenco::virtualAccountTransaction(transactionId: $transactionId);
 
 ```
 
