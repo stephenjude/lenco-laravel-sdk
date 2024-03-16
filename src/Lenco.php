@@ -28,7 +28,6 @@ class Lenco
             ->throw();
     }
 
-
     protected function transformCollection(array $collection, string $resourceClass): array
     {
         return array_map(function ($attributes) use ($resourceClass) {
