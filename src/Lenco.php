@@ -3,6 +3,7 @@
 namespace LencoSDK\Lenco;
 
 use Illuminate\Http\Client\PendingRequest;
+use Illuminate\Support\Facades\Http;
 use LencoSDK\Lenco\Actions\ManagesAccount;
 use LencoSDK\Lenco\Actions\ManagesBank;
 use LencoSDK\Lenco\Actions\ManagesTransactions;
@@ -17,6 +18,16 @@ class Lenco
     use ManagesVirtualAccount;
 
     public PendingRequest $client;
+
+    public function __construct()
+    {
+        $this->client = Http::baseUrl(config('lenco.api_url'))
+            ->withToken(config('lenco.api_token'))
+            ->contentType('application/json')
+            ->acceptJson()
+            ->throw();
+    }
+
 
     protected function transformCollection(array $collection, string $resourceClass): array
     {

@@ -23,13 +23,6 @@ trait MakesHttpRequest
      */
     protected function request(string $verb, string $uri, array $payload = []): array
     {
-        $this->client
-            ->contentType('application/json')
-            ->baseUrl(config('lenco.api_url'))
-            ->withToken(config('lenco.api_token'))
-            ->acceptJson()
-            ->throw();
-
         $response = match (strtoupper($verb)) {
             'POST' => $this->client->post($uri, $payload),
             'GET' => $this->client->get($uri, $payload),
