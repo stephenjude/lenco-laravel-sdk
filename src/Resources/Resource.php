@@ -14,15 +14,7 @@ abstract class Resource
 
     protected function fill(): void
     {
-        collect($this->attributes)->each(function ($value, $key) {
-            $attribute = $this->camelCase($key);
-
-            if (is_array($value) && $class = get_class($this->{$attribute})) {
-                return $this->{$attribute} = new $class($value, $this->lenco);
-            }
-
-            return $this->{$attribute} = $value;
-        });
+        collect($this->attributes)->each(fn($value, $key) => $this->{$this->camelCase($key)} = $value);
     }
 
     protected function camelCase(string $key): string

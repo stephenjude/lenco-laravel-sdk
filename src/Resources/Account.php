@@ -10,7 +10,7 @@ class Account extends Resource
 
     public string $currency;
 
-    public ?ResolvedAccount $bankAccount = null;
+    public array $bankAccount;
 
     public string $type;
 
@@ -25,5 +25,10 @@ class Account extends Resource
     public function balance(): Balance
     {
         return $this->lenco->accountBalance($this->id);
+    }
+
+    public function bankAccount(): array
+    {
+        return new ResolvedAccount($this->bankAccount, $this->lenco);
     }
 }

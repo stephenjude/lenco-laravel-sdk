@@ -8,5 +8,10 @@ class ResolvedAccount extends Resource
 
     public string $accountNumber;
 
-    public Bank $bank;
+    public array $bank;
+
+    public function bank(): Bank
+    {
+        return new Bank($this->bank, $this->lenco);
+    }
 }

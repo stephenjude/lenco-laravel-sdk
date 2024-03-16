@@ -8,7 +8,7 @@ class VirtualAccount extends Resource
 
     public string $accountReference;
 
-    public ResolvedAccount $bankAccount;
+    public array $bankAccount;
 
     public string $currency;
 
@@ -20,7 +20,7 @@ class VirtualAccount extends Resource
 
     public string $createdAt;
 
-    public string $expiresAt;
+    public ?string $expiresAt;
 
     public function transactions(?string $page = null): array
     {
@@ -28,5 +28,10 @@ class VirtualAccount extends Resource
             accountReference: $this->accountReference,
             page: $page
         );
+    }
+
+    public function bankAccount(): array
+    {
+        return new ResolvedAccount($this->bankAccount, $this->lenco);
     }
 }

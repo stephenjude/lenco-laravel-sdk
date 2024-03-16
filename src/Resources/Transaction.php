@@ -22,9 +22,9 @@ class Transaction extends Resource
 
     public string $narration;
 
-    public ?ResolvedAccount $details;
+    public array $details;
 
-    public ?VirtualAccount $virtualAccount = null;
+    public array|null $virtualAccount = null;
 
     public string $accountReference;
 
@@ -35,4 +35,16 @@ class Transaction extends Resource
     public string $nipSessionId;
 
     public string $transactionReference;
+
+    public function details(): array
+    {
+        return new ResolvedAccount($this->details, $this->lenco);
+    }
+
+    public function virtualAccount(): ?array
+    {
+        return is_array($this->virtualAccount)
+            ? new VirtualAccount($this->virtualAccount, $this->lenco)
+            : null;
+    }
 }
