@@ -22,9 +22,9 @@ class Transaction extends Resource
 
     public string $narration;
 
-    public array $details;
+    public ?array $details = null;
 
-    public array|null $virtualAccount = null;
+    public ?array $virtualAccount = null;
 
     public string $accountReference;
 
@@ -32,7 +32,7 @@ class Transaction extends Resource
 
     public string $datetime;
 
-    public string $nipSessionId;
+    public ?string $nipSessionId;
 
     public string $transactionReference;
 
