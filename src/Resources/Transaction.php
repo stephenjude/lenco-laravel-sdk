@@ -24,7 +24,7 @@ class Transaction extends Resource
 
     public array $details;
 
-    public array|null $virtualAccount = null;
+    public ?array $virtualAccount = null;
 
     public string $accountReference;
 
