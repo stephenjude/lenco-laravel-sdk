@@ -30,7 +30,7 @@ class VirtualAccount extends Resource
         );
     }
 
-    public function bankAccount(): array
+    public function bankAccount(): ResolvedAccount
     {
         return new ResolvedAccount($this->bankAccount, $this->lenco);
     }
