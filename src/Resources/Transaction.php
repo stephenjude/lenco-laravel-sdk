@@ -34,7 +34,7 @@ class Transaction extends Resource
 
     public ?string $nipSessionId;
 
-    public string $transactionReference;
+    public ?string $transactionReference;
 
     public function details(): array
     {
