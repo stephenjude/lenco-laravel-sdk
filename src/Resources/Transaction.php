@@ -36,12 +36,12 @@ class Transaction extends Resource
 
     public ?string $transactionReference;
 
-    public function details(): array
+    public function details(): ResolvedAccount
     {
         return new ResolvedAccount($this->details, $this->lenco);
     }
 
-    public function virtualAccount(): ?array
+    public function virtualAccount(): ?VirtualAccount
     {
         return is_array($this->virtualAccount)
             ? new VirtualAccount($this->virtualAccount, $this->lenco)

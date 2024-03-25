@@ -27,7 +27,7 @@ class Account extends Resource
         return $this->lenco->accountBalance($this->id);
     }
 
-    public function bankAccount(): array
+    public function bankAccount(): ResolvedAccount
     {
         return new ResolvedAccount($this->bankAccount, $this->lenco);
     }
