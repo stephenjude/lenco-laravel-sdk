@@ -6,7 +6,6 @@ use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
 use LencoSDK\Lenco\Actions\ManagesAccount;
 use LencoSDK\Lenco\Actions\ManagesBank;
-use LencoSDK\Lenco\Actions\ManagesTransactions;
 use LencoSDK\Lenco\Actions\ManagesTransfer;
 use LencoSDK\Lenco\Actions\ManagesVirtualAccount;
 

@@ -2,7 +2,6 @@
 
 namespace LencoSDK\Lenco\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use LencoSDK\Lenco\LencoServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 

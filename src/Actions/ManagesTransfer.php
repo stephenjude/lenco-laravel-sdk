@@ -22,14 +22,14 @@ trait ManagesTransfer
         ?string $senderName = null,
     ): Transfer {
         $payload = array_filter([
-            "accountId" => $accountId,
-            "recipientId" => $recipientId,
-            "accountNumber" => $accountNumber,
-            "bankCode" => $bankCode,
-            "amount" => $amount,
-            "narration" => $narration,
-            "reference" => $reference,
-            "senderName" => $senderName
+            'accountId' => $accountId,
+            'recipientId' => $recipientId,
+            'accountNumber' => $accountNumber,
+            'bankCode' => $bankCode,
+            'amount' => $amount,
+            'narration' => $narration,
+            'reference' => $reference,
+            'senderName' => $senderName,
         ]);
 
         return new Transfer(
