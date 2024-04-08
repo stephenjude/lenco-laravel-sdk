@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Http;
 use LencoSDK\Lenco\Actions\ManagesAccount;
 use LencoSDK\Lenco\Actions\ManagesBank;
 use LencoSDK\Lenco\Actions\ManagesTransactions;
+use LencoSDK\Lenco\Actions\ManagesTransfer;
 use LencoSDK\Lenco\Actions\ManagesVirtualAccount;
 
 class Lenco
@@ -14,7 +15,7 @@ class Lenco
     use MakesHttpRequest;
     use ManagesAccount;
     use ManagesBank;
-    use ManagesTransactions;
+    use ManagesTransfer;
     use ManagesVirtualAccount;
 
     public PendingRequest $client;
